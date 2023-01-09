@@ -4,34 +4,51 @@
     {
         public static void Main(String[] args)
         {
-            testCases<int> test = new testCases<int>();
+            Console.WriteLine("Enter which datatype you want 1)Integer 2)Float 3)String :");
+            int z = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Given Max Number at 1st Position from {5,4,3} return the Same Number : Test Case 1 ");
-            Console.WriteLine(test.max(5, 4, 3));
-            Console.WriteLine("Given Max Number at 2nd Position from {55,99,65} return the Same Number : Test Case 2 ");
-            Console.WriteLine(test.max(45, 99, 65));
-            Console.WriteLine("Given Max Number at 3rd Position from {101,447,833} return the Same Number : Test Case 3 ");
-            Console.WriteLine(test.max(101, 447, 833));
-            Console.WriteLine("-----------------------------------");
+            switch (z)
+            {
+                case 1:
+                    Console.WriteLine("Enter the number of elements in array: ");
+                    int n = Convert.ToInt32(Console.ReadLine());
+                    int[] arr = new int[n];
+                    for (int i = 0; i <n; i++)
+                    {
+                        Console.WriteLine("Enter the number  {0} : ", i);
+                        arr[i] = Convert.ToInt32(Console.ReadLine());
+                    }
+                    testCases<int> test = new testCases<int>(arr);
+                    test.toPrint();
+                    break;
 
-            testCases<float> test1 = new testCases<float>();
+                case 2:
+                    Console.WriteLine("Enter the number of elements in array: ");
+                    int n1 = Convert.ToInt32(Console.ReadLine());
+                    double[] arr1 = new double[n1];
+                    for (int i = 0; i < n1; i++)
+                    {
+                        Console.WriteLine("Enter the number  {0} : ", i);
+                        arr1[i] = Convert.ToDouble(Console.ReadLine());
+                    }
+                    testCases<double> test1 = new testCases<double>(arr1);
+                    test1.toPrint();
+                    break;
 
-            Console.WriteLine("Given Max Number at 1st Position from {5.5,4.4,3.73} return the Same Number:Test Case 1 ");
-            Console.WriteLine(test1.max(5.5F, 4.4F, 3.3F));
-            Console.WriteLine("Given Max Number at 2nd Position from {55.8,89.76,73.66} return the Same Number:Test Case 2 ");
-            Console.WriteLine(test1.max(45.8F, 99.76F, 65.66F));
-            Console.WriteLine("Given Max Number at 3rd Position from {101.56,447.01,833.09} return the Same Number:Test Case 3 ");
-            Console.WriteLine(test1.max(101.56F, 434.01F, 703.09F));
-            Console.WriteLine("-----------------------------------");
+                case 3:
+                    Console.WriteLine("Enter the number of elements in array: ");
+                    int n2 = Convert.ToInt32(Console.ReadLine());
+                    string[] arr2 = new string[n2];
+                    for (int i = 0; i < n2; i++)
+                    {
+                        Console.WriteLine("Enter the string  {0} : ", i);
+                        arr2[i] = Console.ReadLine();
+                    }
+                    testCases<string> test2 = new testCases<string>(arr2);
+                    test2.toPrint();
+                    break;
 
-            testCases<string> test2 = new testCases<string>();
-
-            Console.WriteLine("Given Max Number at 1st Position from {Peach\",\"Apple\", \"Banana}return the Same Number:Test Case 1 ");
-            Console.WriteLine(test2.max("Peach", "Apple", "Banana"));
-            Console.WriteLine("Given Max Number at 2nd Position from {angle\", \"volume\", \"shape} return the Same Number:Test Case 2 ");
-            Console.WriteLine(test2.max("angle", "volume", "shape"));
-            Console.WriteLine("Given Max Number at 3rd Position from {lawyer\", \"docter\", \"sofware\"} return the Same Number:Test Case 3 ");
-            Console.WriteLine(test2.max("lawyer", "docter", "sofware"));
+            }
         }
     }
 }
